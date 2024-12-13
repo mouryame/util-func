@@ -1,3 +1,4 @@
+import { globalCache } from "@/cache";
 import connectDB from "../db/connect";
 import { pages } from "../db/models";
 
@@ -14,13 +15,14 @@ async function createPage(pageProps: PageProps) {
 
   const lastPage = await pages.findOne({}).sort({ id: -1 }).select("id");
   const lastPageId = lastPage?.id || 0;
-  const newPage = await pages.create({
+  await pages.create({
     id: lastPageId + 1,
     title,
     content,
     languageId: 1, //change this to accept value from pageProps in future
   });
-  console.log(newPage);
+
+  globalCache.delete("pageList");
   return { message: "Page Created" };
 }
 
@@ -29,13 +31,14 @@ async function deletePage(id: Number) {
   const isPageExisiting = await pages.findOne({ id });
   if (!isPageExisiting) return { message: "Page Not Found" };
   await pages.deleteOne({ id });
-
+  globalCache.delete("pageList");
   return { message: "Page Deleted" };
 }
 
 async function updatePage(updatedData: PageProps) {
   await connectDB();
   await pages.updateOne({ id: updatedData.id }, { $set: updatedData });
+  globalCache.delete("pageList");
   return { message: "Page Updated" };
 }
 
