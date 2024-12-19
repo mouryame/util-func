@@ -1,11 +1,15 @@
 "use client";
 import { PageListItem } from "@/types";
 import styles from "./PageSearch.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import useClickOutside from "@/hooks/useClickOutside";
 
 export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
+  const inputRef = useRef(null);
   const [list, setList] = useState<PageListItem[]>(pageList);
   const [showList, setShowList] = useState(false);
+
+  useClickOutside(inputRef, () => setShowList(false));
 
   const handleSearch = (searchTerm: string) => {
     setShowList(searchTerm.length > 2);
@@ -17,11 +21,11 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
   };
 
   return (
-    <div>
+    <div ref={inputRef}>
       <form>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Type to Search"
           className={styles.input}
           onChange={(e) => handleSearch(e.target.value)}
         />
