@@ -1,15 +1,19 @@
 .input {
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--secondary);
   padding: 1rem;
   font-size: 1.5rem;
-  width: 40rem;
+  width: 30rem;
   outline: none;
   border-radius: 0.5rem;
   transition: var(--transition);
+  backdrop-filter: blur(20px);
+  background-color: #ffffff10;
+  color: var(--white);
 }
 
 .input:focus {
-  outline: 2px solid #62ceff;
+  outline: 2px solid var(--primary);
+  caret-color: var(--primary);
 }
 
 .pageList {
@@ -19,7 +23,10 @@
   max-height: 10rem;
   overflow-y: auto;
   border-radius: 0.5rem;
+  backdrop-filter: blur(20px);
+  background-color: #ffffff10;
   transition: var(--transition);
+  color: white;
 }
 
 .open {
@@ -31,12 +38,12 @@
   cursor: pointer;
 }
 
-.pageList li:hover {
-  background-color: var(--input-border);
-}
-
 .pageList a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
   display: block;
+}
+
+.pageList li:hover {
+  background-color: var(--secondary-transparent);
 }

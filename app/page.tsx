@@ -8,10 +8,8 @@ export default async function Home() {
   const pageList: PageListItem[] = await fetchAllPages();
   return (
     <div className={styles.container}>
-      <div>
-        <h1>Welcome to Util Func!</h1>
-        <h4>Library of Uitility Functions</h4>
-      </div>
+      <h1>Welcome to Util Func!</h1>
+      <h4>Library of Uitility Functions</h4>
       <PageSearch pageList={JSON.parse(JSON.stringify(pageList))} />
     </div>
   );

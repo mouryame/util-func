@@ -79,13 +79,21 @@ h6 {
   --light-gray: #efefef;
   --dark-gray: #222;
   --input-border: #eef9f9;
+  --primary: #00ff73;
+  --secondary: #bffffa;
+
+  --secondary-transparent: #bffffa30;
+  --primary-transparent: #00ff7330;
+
+  --bg-gradient: linear-gradient(180deg, #212121 0%, #000000 100%);
 
   --transition: 300ms ease-in-out;
 }
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: var(--light-gray);
+  background: var(--bg-gradient);
+  color: var(--white);
 }
 
 .app-container {

@@ -1,6 +1,6 @@
 .headerContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
 }
@@ -9,12 +9,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--black);
   padding: 1rem 3rem;
   border-radius: 99rem;
+  cursor: pointer;
 }
 
 .logoContainer h1 {
   font-size: 1.5rem;
   font-weight: 600;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 99rem;
+  margin-left: 1rem;
 }
