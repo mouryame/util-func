@@ -1,0 +1,60 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input {
+  border: 1px solid var(--secondary);
+  padding: 1rem;
+  width: 30rem;
+  outline: none;
+  border-radius: 0.5rem;
+  transition: var(--transition);
+  backdrop-filter: blur(20px);
+  background-color: #ffffff10;
+  color: var(--white);
+}
+
+.input:focus {
+  outline: 2px solid var(--primary);
+  caret-color: var(--primary);
+}
+
+.textarea {
+  border: 1px solid var(--secondary);
+  padding: 1rem;
+  width: 30rem;
+  height: 10rem;
+  outline: none;
+  border-radius: 0.5rem;
+  transition: var(--transition);
+  backdrop-filter: blur(20px);
+  background-color: #ffffff10;
+  color: var(--white);
+}
+
+.textarea:focus {
+  outline: 2px solid var(--primary);
+  caret-color: var(--primary);
+}
+
+.button {
+  padding: 1rem 3rem;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-transparent),
+    var(--secondary-transparent)
+  );
+  color: var(--black);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.button:hover {
+  background-color: var(--secondary);
+}
