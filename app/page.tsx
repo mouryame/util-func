@@ -3,6 +3,8 @@ import { fetchAllPages } from "@/services";
 import { FuncList, PageSearch } from "@/components";
 import { PageListItem } from "@/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const pageList: PageListItem[] = (await fetchAllPages()) || [];
   return (
