@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.codeBlock {
+  width: 50rem;
+  height: 75vh;
+  border: 1px solid var(--secondary-transparent);
+  background-color: var(--dark-gray);
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow: auto;
+}
+
+.codeBlock pre {
+  background-color: var(--dark-gray) !important;
+}
