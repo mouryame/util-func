@@ -25,4 +25,9 @@ class Cache {
 }
 
 const globalCache = new Cache();
+
+setInterval(() => {
+  globalCache.clear();
+}, 1000 * 60 * 10); // clear cache every 10 mins
+
 export { globalCache };
