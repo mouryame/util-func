@@ -1,0 +1,32 @@
+.funcList {
+  list-style: none;
+  padding: 1rem;
+  color: var(--white);
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.listItem {
+  color: white;
+  padding: 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.5rem;
+  transition: var(--transition);
+  backdrop-filter: blur(20px);
+  background-color: var(--black-transparent);
+  cursor: pointer;
+}
+
+.listItem a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.listItem:hover {
+  outline: 2px solid var(--primary);
+  caret-color: var(--primary);
+  box-shadow: 2px 2px 20px var(--secondary);
+}

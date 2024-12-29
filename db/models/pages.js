@@ -10,5 +10,5 @@ const PageSchema = new Schema(
   { timestamps: true }
 );
 
-const pages = mongoose.models.Page || mongoose.model("Page", PageSchema);
+const pages = mongoose.models?.Page || mongoose.model("Page", PageSchema);
 export default pages;

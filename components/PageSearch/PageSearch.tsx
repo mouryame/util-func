@@ -21,7 +21,7 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
   };
 
   return (
-    <div ref={inputRef}>
+    <div ref={inputRef} className={styles.searchContainer}>
       <form>
         <input
           type="text"

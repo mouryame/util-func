@@ -1,3 +1,4 @@
+"use server";
 import { globalCache } from "@/cache";
 import connectDB from "../db/connect";
 import { pages } from "../db/models";

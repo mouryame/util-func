@@ -84,6 +84,7 @@ h6 {
 
   --secondary-transparent: #bffffa30;
   --primary-transparent: #00ff7330;
+  --black-transparent: #00000010;
 
   --bg-gradient: linear-gradient(180deg, #212121 0%, #000000 100%);
 
@@ -102,4 +103,5 @@ body {
   min-height: calc(100vh - 10rem);
   min-height: calc(100dvh - 10rem);
   padding: 1rem;
+  overflow: auto;
 }
