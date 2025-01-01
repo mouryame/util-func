@@ -8,6 +8,7 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
   const inputRef = useRef(null);
   const [list, setList] = useState<PageListItem[]>(pageList);
   const [showList, setShowList] = useState(false);
+  const [selected, setSelected] = useState(0);
 
   useClickOutside(inputRef, () => setShowList(false));
 
@@ -20,6 +21,17 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
     setList(filteredPageList);
   };
 
+  const handleKeyPress = (e: any) => {
+    if (e.key === "ArrowDown") {
+      setSelected(selected === list.length - 1 ? 0 : selected + 1);
+    } else if (e.key === "ArrowUp") {
+      setSelected(selected === 0 ? list.length - 1 : selected - 1);
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      window.location.href = `/functions/${list[selected].id}`;
+    }
+  };
+
   return (
     <div ref={inputRef} className={styles.searchContainer}>
       <form>
@@ -28,12 +40,16 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
           placeholder="Type to Search"
           className={styles.input}
           onChange={(e) => handleSearch(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
       </form>
       <ul className={`${styles.pageList} ${showList ? styles.open : ""}`}>
-        {list.map((page: PageListItem) => {
+        {list.map((page: PageListItem, index: number) => {
           return (
-            <li key={page.id}>
+            <li
+              key={page.id}
+              className={selected === index ? styles.active : ""}
+            >
               <a href={`/functions/${page.id}`}>{page.title}</a>
             </li>
           );
