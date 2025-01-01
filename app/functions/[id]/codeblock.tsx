@@ -6,7 +6,7 @@ export default function CodeBlock({
   children,
 }: {
   content: string;
-  children: any;
+  children: React.ReactNode;
 }) {
   return (
     <>

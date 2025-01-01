@@ -1,7 +1,7 @@
 "use client";
 import { PageListItem } from "@/types";
 import styles from "./PageSearch.module.css";
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import useClickOutside from "@/hooks/useClickOutside";
 
 export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
@@ -21,7 +21,7 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
     setList(filteredPageList);
   };
 
-  const handleKeyPress = (e: any) => {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     switch (e.key) {
       case "ArrowDown":
         setSelected(selected === list.length - 1 ? 0 : selected + 1);
