@@ -11,7 +11,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   width: 100%;
 }
 .input {
@@ -34,9 +33,10 @@
 }
 
 .pageList {
+  width: 100%;
+  max-width: 30rem;
   display: none;
   list-style: none;
-  background-color: var(--white);
   max-height: 10rem;
   overflow-y: auto;
   border-radius: 0.5rem;
@@ -44,6 +44,7 @@
   background-color: var(--black-transparent);
   transition: var(--transition);
   color: white;
+  border: 1px solid var(--secondary-transparent);
 }
 
 .open {
@@ -62,5 +63,9 @@
 }
 
 .pageList li:hover {
+  background-color: var(--secondary-transparent);
+}
+
+.active {
   background-color: var(--secondary-transparent);
 }

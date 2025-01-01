@@ -11,7 +11,6 @@
 
 .listItem {
   color: white;
-  padding: 1rem;
   border: 1px solid var(--secondary);
   border-radius: 0.5rem;
   transition: var(--transition);
@@ -23,6 +22,9 @@
 .listItem a {
   text-decoration: none;
   color: var(--white);
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
 }
 
 .listItem:hover {
