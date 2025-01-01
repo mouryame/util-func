@@ -22,13 +22,20 @@ export default function PageSearch({ pageList }: { pageList: PageListItem[] }) {
   };
 
   const handleKeyPress = (e: any) => {
-    if (e.key === "ArrowDown") {
-      setSelected(selected === list.length - 1 ? 0 : selected + 1);
-    } else if (e.key === "ArrowUp") {
-      setSelected(selected === 0 ? list.length - 1 : selected - 1);
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      window.location.href = `/functions/${list[selected].id}`;
+    switch (e.key) {
+      case "ArrowDown":
+        setSelected(selected === list.length - 1 ? 0 : selected + 1);
+        break;
+      case "ArrowUp":
+        setSelected(selected === 0 ? list.length - 1 : selected - 1);
+        break;
+      case "Enter":
+        e.preventDefault();
+        window.location.href = `/functions/${list[selected].id}`;
+        break;
+      default:
+        setSelected(0);
+        break;
     }
   };
 

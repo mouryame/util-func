@@ -1,6 +1,7 @@
 import { fetchPageContentById } from "@/services";
 import styles from "./page.module.css";
-import Syntax from "@/components/syntax";
+import CodeBlock from "./codeblock";
+import CopyButton from "./copyButton";
 
 export default async function Page({
   params,
@@ -13,9 +14,9 @@ export default async function Page({
   return (
     <div className={styles.container}>
       <h1>{title}</h1>
-      <div className={styles.codeBlock}>
-        <Syntax>{content}</Syntax>
-      </div>
+      <CodeBlock content={content}>
+        <CopyButton content={content} />
+      </CodeBlock>
     </div>
   );
 }

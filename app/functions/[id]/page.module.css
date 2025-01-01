@@ -21,8 +21,21 @@
   padding: 1rem;
   border-radius: 1rem;
   overflow: auto;
+  position: relative;
 }
 
 .codeBlock pre {
   background-color: var(--dark-gray) !important;
+}
+
+.copyButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-transparent);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--white);
+  cursor: pointer;
 }
